@@ -1,0 +1,602 @@
+/* ==========================================================
+   VARIABLES CORPORATIVAS Y CONFIGURACIÓN INICIAL (CSS3)
+   ========================================================== */
+:root {
+    /* Paleta de Colores Solicitada */
+    --color-principal: #C8B6E2;     /* Lila claro corporativo */
+    --color-secundario: #F5D6E0;    /* Rosa suave corporativo */
+    --color-complementario: #9B7BB8;/* Púrpura elegante */
+    --color-fondo: #FFFFFF;         /* Blanco puro */
+    --color-fondo-suave: #FAF7FC;   /* Fondo suave para contraste */
+    --color-texto: #333333;         /* Gris oscuro para legibilidad */
+    --color-texto-mutado: #666666;  /* Gris medio para descripciones */
+    
+    /* Tipografías */
+    --fuente-titulos: 'Cormorant Garamond', Georgia, serif;
+    --fuente-textos: 'Poppins', Helvetica, Arial, sans-serif;
+}
+
+/* Reset básico del Modelo de Caja */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-textos);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* Ajuste global para imágenes responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Contenedor general centrado */
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 45px 0;
+}
+
+/* Títulos reutilizables */
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-complementario);
+    font-weight: 700;
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitulo-seccion {
+    text-align: center;
+    color: var(--color-texto-mutado);
+    margin-bottom: 35px;
+    font-size: 1rem;
+}
+
+/* Estilos de Botones */
+.boton {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--color-complementario);
+    color: #FFFFFF;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #8361A2;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================
+   1. HEADER / ENCABEZADO (FLEXBOX)
+   ========================================================== */
+.encabezado {
+    background-color: var(--color-fondo);
+    border-bottom: 2px solid var(--color-secundario);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.encabezado-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-complementario);
+}
+
+.menu-lista {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu-lista a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-texto);
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-lista a:hover {
+    color: var(--color-complementario);
+    background-color: var(--color-secundario);
+}
+
+/* ==========================================================
+   2. HERO / PRINCIPAL (FLEXBOX)
+   ========================================================== */
+.hero {
+    background-color: var(--color-fondo-suave);
+    border-bottom: 1px solid var(--color-secundario);
+}
+
+.hero-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-columna-texto {
+    flex: 1;
+}
+
+.etiqueta-negocio {
+    display: inline-block;
+    background-color: var(--color-secundario);
+    color: var(--color-complementario);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero-titulo {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.hero-eslogan {
+    font-size: 1.3rem;
+    color: var(--color-complementario);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.hero-descripcion {
+    margin-bottom: 25px;
+    color: var(--color-texto-mutado);
+}
+
+.hero-columna-imagen {
+    flex: 1;
+}
+
+.hero-columna-imagen img {
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================
+   3. NOSOTROS / SOBRE MÍ (FLEXBOX)
+   ========================================================== */
+.nosotros-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nosotros-imagen {
+    flex: 1;
+}
+
+.nosotros-imagen img {
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.nosotros-texto {
+    flex: 1;
+}
+
+.nosotros-texto h2 {
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+}
+
+.nosotros-texto p {
+    margin-bottom: 15px;
+    color: var(--color-texto-mutado);
+}
+
+/* ==========================================================
+   4. SERVICIOS (FLEXBOX TARJETAS)
+   ========================================================== */
+.servicios {
+    background-color: var(--color-fondo-suave);
+}
+
+.servicios-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tarjeta-servicio {
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-secundario);
+    border-radius: 12px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(155, 123, 184, 0.2);
+}
+
+.tarjeta-servicio img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tarjeta-contenido {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.tarjeta-contenido h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.tarjeta-contenido p {
+    font-size: 0.9rem;
+    color: var(--color-texto-mutado);
+    margin-bottom: 15px;
+}
+
+.precio {
+    font-weight: bold;
+    color: var(--color-complementario);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.boton-tarjeta {
+    display: block;
+    text-align: center;
+    background-color: var(--color-principal);
+    color: #FFFFFF;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.boton-tarjeta:hover {
+    background-color: var(--color-complementario);
+}
+
+/* ==========================================================
+   5. BENEFICIOS (FLEXBOX)
+   ========================================================== */
+.beneficios-contenedor {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.tarjeta-beneficio {
+    background-color: var(--color-fondo-suave);
+    border: 1px solid var(--color-secundario);
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+}
+
+.icono-beneficio {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.tarjeta-beneficio h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.tarjeta-beneficio p {
+    font-size: 0.9rem;
+    color: var(--color-texto-mutado);
+}
+
+/* ==========================================================
+   6. TABLA DE SERVICIOS Y TARIFAS (REDISEÑADA Y ELEGANTE)
+   ========================================================== */
+.precios-seccion {
+    background-color: var(--color-fondo);
+}
+
+.tabla-tarjeta {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid var(--color-secundario);
+    box-shadow: 0 10px 30px rgba(155, 123, 184, 0.12);
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.tabla-servicios {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-servicios thead tr {
+    background-color: var(--color-complementario);
+    color: #FFFFFF;
+}
+
+.tabla-servicios th {
+    padding: 18px 20px;
+    font-family: var(--fuente-titulos);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.tabla-servicios td {
+    padding: 18px 20px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #F3ECF8;
+    color: var(--color-texto);
+    vertical-align: middle;
+}
+
+/* Filas alternadas */
+.tabla-servicios tbody tr:nth-child(even) {
+    background-color: var(--color-fondo-suave);
+}
+
+/* Efecto hover */
+.tabla-servicios tbody tr:hover {
+    background-color: #F8EAF2;
+    transition: background-color 0.3s ease;
+}
+
+.tabla-servicios tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Insignias / Badges */
+.badge-duracion {
+    display: inline-block;
+    background-color: #F0E6F7;
+    color: var(--color-complementario);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.badge-precio {
+    display: inline-block;
+    background-color: var(--color-secundario);
+    color: #7A4E9E;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* ==========================================================
+   7. GALERÍA (FLEXBOX)
+   ========================================================== */
+.galeria {
+    background-color: var(--color-fondo-suave);
+}
+
+.galeria-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.galeria-item {
+    width: calc(33.333% - 10px);
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.06);
+}
+
+/* ==========================================================
+   8. FORMULARIO DE CONTACTO
+   ========================================================== */
+.formulario-contenedor {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--color-fondo-suave);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--color-secundario);
+}
+
+.campo-formulario {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-formulario label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--color-texto);
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    padding: 12px;
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    font-family: var(--fuente-textos);
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    border-color: var(--color-complementario);
+}
+
+.boton-formulario {
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* ==========================================================
+   9. FOOTER / PIE DE PÁGINA (FLEXBOX)
+   ========================================================== */
+.pie-pagina {
+    background-color: var(--color-complementario);
+    color: #FFFFFF;
+}
+
+.pie-pagina-contenedor {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+.pie-bloque {
+    flex: 1;
+    min-width: 200px;
+}
+
+.pie-titulo {
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.pie-eslogan {
+    font-style: italic;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.pie-bloque h4 {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--color-principal);
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.pie-bloque p, .pie-bloque a {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+.pie-bloque a:hover {
+    text-decoration: underline;
+}
+
+.pie-derechos {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 0;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* ==========================================================
+   DISEÑO RESPONSIVE (@media max-width: 768px)
+   ========================================================== */
+@media (max-width: 768px) {
+    .encabezado-contenedor {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu-lista {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-contenedor,
+    .nosotros-contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-titulo {
+        font-size: 2.2rem;
+    }
+
+    .tarjeta-servicio {
+        width: 100%;
+    }
+
+    .beneficios-contenedor {
+        flex-direction: column;
+    }
+
+    .tabla-tarjeta {
+        overflow-x: auto;
+    }
+
+    .galeria-item {
+        width: 100%;
+    }
+
+    .pie-pagina-contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pie-bloque h4 {
+        border-bottom: none;
+    }
+}
